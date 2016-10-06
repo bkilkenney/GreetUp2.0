@@ -1,0 +1,77 @@
+﻿@model IEnumerable<GreetUp.Models.Event>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Upcoming Coding Events</h2>
+
+
+
+
+
+
+            @*@Html.DisplayNameFor(model => model.EventType.EventTitle)
+
+        
+            @Html.DisplayNameFor(model => model.EventTitle)
+
+        
+            @Html.DisplayNameFor(model => model.Details)
+
+        
+            @Html.DisplayNameFor(model => model.EventDate)
+
+        
+            @Html.DisplayNameFor(model => model.NumOfRSVP)*@
+       
+
+
+<div class="row">
+
+
+    @foreach (var item in Model)
+    {
+
+      
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">                    
+                    <div class="caption">
+                        <h3>@Html.DisplayFor(modelItem => item.EventTitle)</h3>
+                        <p>@Html.DisplayFor(modelItem => item.Details)</p>
+                        <p>@Html.DisplayFor(modelItem => item.EventDate)</p>
+                        <p>Number of Attendees: @Html.DisplayFor(modelItem => item.NumOfRSVP)</p>
+                        <p>Type of Event: @Html.DisplayFor(modelItem => item.EventType.EventTitle)</p>
+                       <p> @Html.ActionLink("Edit", "Edit", new { id = item.ID }, new { @class = "btn btn-primary"})
+                        @Html.ActionLink("Details", "Details", new { id = item.ID }, new { @class = "btn btn-danger" })
+                        @Html.ActionLink("Delete", "Delete", new { id = item.ID }, new { @class = "btn btn-success" }) </p>
+                    
+    
+    
+    @*<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>*@
+                    </div>
+                </div>
+            </div>
+
+        @*@Html.DisplayFor(modelItem => item.EventType.EventTitle)*@
+
+        @*@Html.DisplayFor(modelItem => item.EventTitle)*@
+
+        @*@Html.DisplayFor(modelItem => item.Details)*@
+
+        @*@Html.DisplayFor(modelItem => item.EventDate)*@
+
+        @*@Html.DisplayFor(modelItem => item.NumOfRSVP)*@
+
+        @*@Html.ActionLink("Edit", "Edit", new { id = item.ID }) 
+            @Html.ActionLink("Details", "Details", new { id = item.ID }) 
+    @Html.ActionLink("Delete", "Delete", new { id = item.ID })*@
+
+
+    }
+
+
+</div>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
